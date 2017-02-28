@@ -14,7 +14,7 @@ jasperserver-db:
   environment:
 #    - MARIADB_USER=jasper
 #    - MARIADB_PASS=my_password
-    - MYSQL_ROOT_PASSWORD=my_root_password
+#- MYSQL_ROOT_PASSWORD=my_root_password
     - MYSQL_USER=jasper
     - MYSQL_PASSWORD=my_password
 
