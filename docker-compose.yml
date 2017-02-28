@@ -28,5 +28,6 @@ jasperserver:
     - jasperserver-db:jasper.db
   environment:
     - JS_DB_HOST=jasper.db
-    - JS_DB_USER=jasper
+#   - JS_DB_USER=jasper
+    - JS_DB_USER=root
     - JS_DB_PASSWORD=my_password
