@@ -28,7 +28,9 @@ setup_jasperserver() {
     sed -i -e "s|^# quartz\.mail\.sender\.host.*$|quartz.mail.sender.host = $JS_MAIL_HOST|g; s|^# quartz\.mail\.sender\.port.*$|quartz.mail.sender.port = $JS_MAIL_PORT|g; s|^# quartz\.mail\.sender\.protocol.*$|quartz.mail.sender.protocol = $JS_MAIL_PROTOCOL|g; s|^# quartz\.mail\.sender\.username.*$|quartz.mail.sender.username = $JS_MAIL_USERNAME|g; s|^# quartz\.mail\.sender\.password.*$|quartz.mail.sender.username = $JS_MAIL_PASSWORD|g; s|^# quartz\.mail\.sender\.from.*$|quartz.mail.sender.from = $JS_MAIL_SENDER|g; s|^# quartz\.web\.deployment\.uri.*$|quartz.web.deployment.uri = $JS_WEB_DEPLOYMENT_URI|g" default_master.properties
     
     # DB seeding
-    ./js-ant create-js-db init-js-db-ce import-minimal-ce || true
+    #   Installing the WAR File Manually
+    # - http://community.jaspersoft.com/documentation/jasperreports-server-community-install-guide/v56/installing-war-file-manually
+    ./js-ant create-js-db init-js-db-ce import-minimal-ce import-sample-data-ce || true
     for i in $@; do
         ./js-ant $i
     done
