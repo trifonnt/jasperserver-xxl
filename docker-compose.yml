@@ -14,7 +14,9 @@ jasperserver-db:
   environment:
 #    - MARIADB_USER=jasper
 #    - MARIADB_PASS=my_password
-    - MYSQL_ROOT_PASSWORD=my_password
+    - MYSQL_ROOT_PASSWORD=my_root_password
+    - MYSQL_USER=jasper
+    - MYSQL_PASSWORD=my_password
 
 jasperserver:
   image: monitoringartist/jasperserver-xxl:latest
@@ -26,6 +28,5 @@ jasperserver:
     - jasperserver-db:jasper.db
   environment:
     - JS_DB_HOST=jasper.db
-#   - JS_DB_USER=jasper
-    - JS_DB_USER=root
+    - JS_DB_USER=jasper
     - JS_DB_PASSWORD=my_password
