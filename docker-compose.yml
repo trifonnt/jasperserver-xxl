@@ -9,6 +9,7 @@ jasperserver-db:
   image: mariadb:10.0.29
   volumes:
     - /etc/localtime:/etc/localtime:ro
+    - /etc/timezone:/etc/timezone:ro
   volumes_from:
     - jasperserver-db-storage
   environment:
@@ -24,6 +25,7 @@ jasperserver:
     - "8080:8080"
   volumes:
     - /etc/localtime:/etc/localtime:ro
+    - /etc/timezone:/etc/timezone:ro
   links:
     - jasperserver-db:jasper.db
   environment:
