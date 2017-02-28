@@ -1,5 +1,6 @@
 jasperserver-db-storage:
-  image: busybox:latest
+# image: busybox:latest
+  image: busybox:1.26
   volumes:
     - /var/lib/mysql
 
@@ -11,8 +12,9 @@ jasperserver-db:
   volumes_from:
     - jasperserver-db-storage
   environment:
-    - MARIADB_USER=jasper
-    - MARIADB_PASS=my_password
+#    - MARIADB_USER=jasper
+#    - MARIADB_PASS=my_password
+    - MYSQL_ROOT_PASSWORD=jasper
 
 jasperserver:
   image: monitoringartist/jasperserver-xxl:latest
