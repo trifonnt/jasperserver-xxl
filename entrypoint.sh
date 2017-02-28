@@ -30,7 +30,7 @@ setup_jasperserver() {
     # DB seeding
     #   Installing the WAR File Manually
     # - http://community.jaspersoft.com/documentation/jasperreports-server-community-install-guide/v56/installing-war-file-manually
-    ./js-ant create-js-db init-js-db-ce import-minimal-ce import-sample-data-ce || true
+    ./js-ant create-js-db init-js-db-ce import-minimal-ce create-sugarcrm-db load-sugarcrm-db create-foodmart-db load-foodmart-db import-sample-data-ce || true
     for i in $@; do
         ./js-ant $i
     done
